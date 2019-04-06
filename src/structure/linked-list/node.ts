@@ -1,18 +1,18 @@
 export default class Node<T> {
-  private value: T;
+  private data: T;
   private next: Node<T>;
 
-  constructor(value: T, next:Node<T>  = null) {
-    this.value = value;
+  constructor(data: T, next:Node<T> = null) {
+    this.data = data;
     this.next = next;
   }
 
   get = (): T => {
-    return this.value;
+    return this.data;
   }
 
-  set = (value: T) => {
-    this.value = value;
+  set = (data: T) => {
+    this.data = data;
   }
   
   hasNext = (): Node<T> | boolean => {
@@ -27,8 +27,8 @@ export default class Node<T> {
     return this.next;
   }
 
-  toString = (callback?: <R = void>(value: T) => R) => {
-    return callback ? callback(this.value) : `${this.value}`
+  toString = (callback?: <R = void>(data: T) => R) => {
+    return callback ? callback(this.data) : `${this.data}`
   }
 }
 
